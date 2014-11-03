@@ -1,4 +1,4 @@
-var Student = Backbone.Model.extend({
+var Chase = Backbone.Model.extend({
 
   defaults: {
     name: '',
