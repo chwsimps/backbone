@@ -22,5 +22,21 @@ body {
     font-size: 60px;
     line-height: 1;
     letter-spacing: -1px;
+    text-align: center;
+  }
+  form {
+    text-align: center;
+  }
+}
+
+.film {
+  list-style: none;
+  padding: 0;
+}
+
+.input {
+  float: right;
+  input {
+    margin-left: 10px;
   }
 }
