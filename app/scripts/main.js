@@ -1,48 +1,38 @@
-var Chase = Backbone.Model.extend({
+var Band = Backbone.Model.extend({
 
   defaults: {
     name: '',
-    location: 'Atlanta',
-    awesome: true
+    band_location: 'Atlanta',
+    rocks: true
   },
 
   initialize: function () {
     var n = this.get('name');
-    console.log(n + ' has been added!');
+    console.log(n + ' is my favorite Band!');
   }
 
 });
 
-var Students = Backbone.Collection.extend({
-  model: Student,
+var Bands = Backbone.Collection.extend({
+  model: Band,
   url: 'http://tiy-atl-fe-server.herokuapp.com/collections/bbchase'
 });
 
-var all_students = new Students();
+var fav_band = new Bands();
 
-//Normally Collections will be plural version of Model (ex: Student & Students)
+$('#form').on('submit', function (event) {
+  event.preventDefault();
 
-$('#studentForm').on('submit', function (e) {
+  var band_name = $('#name').val();
 
-  // Prevent the default action of our form submission
-  e.preventDefault();
-
-  // Grab the name from the input
-  var student_name = $('#name').val();
-
-  // Create the new instance of out Student constructor (Backbone.Model)
-  var s = new Student({
-    name: student_name
+  var b = new Band({
+    name: band_name
   });
 
-  // Access our Collection and add our new instance (Student) to our collection
-  all_students.add(s);
+  fav_band.add(b);
 
-  // Save our student - this looks for a URL field or a URL field in our collection
-  // and saves it to that URL using a simple POST method
-  s.save();
+  b.save();
 
-  // Clear my form
   $(this)[0].reset();
 
 });
