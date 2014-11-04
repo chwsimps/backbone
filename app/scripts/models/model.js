@@ -3,7 +3,8 @@ var Movie = Backbone.Model.extend({
   defaults: {
     title: '',
     director: '',
-    good: true
+    good: '',
+    bad: ''
   },
 
   idAttribute: '_id',

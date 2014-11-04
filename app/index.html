@@ -28,13 +28,18 @@
       <form id="movie-click">
         <input type="text" id="title" placeholder="Movie">
         <input type="text" id="director" placeholder="Director">
+        <!-- <div id="recommend">
+          <p>Recommend</p> -->
+          <input type="checkbox" id="good" value="Yes">Yes
+          <input type="checkbox" id="bad" value="No">No
+        <!-- </div> -->
         <button id="moviebtn">Add</button>
       </form>
       <div id="moviecntr"></div>
     </div>
 
     <script type="text/template" id="film">
-      <li><%= title %> directed by <%= director %><div class="input"><input type="checkbox"> Good<input type="checkbox"> Bad</div></li>
+      <li><%= title %> directed by <%= director %> Recommend <%= good %><%= bad %></li>
     </script>
 
     <!-- build:js scripts/vendor.js -->
