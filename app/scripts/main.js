@@ -11,4 +11,4 @@ App.fav_movie.fetch().done(function () {
 new App.Views.MovieAdd();
 
 
-})();
+}());

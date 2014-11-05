@@ -2,7 +2,7 @@
 
 App.Views.MovieAdd = Backbone.View.extend ({
 
-  el: '#movieform',
+  // el: '#movieform',
 
   events: {
     'submit #movie-click' : 'addMovie'
@@ -10,11 +10,11 @@ App.Views.MovieAdd = Backbone.View.extend ({
 
   initialize: function () {
     this.render();
+    $('#movieform').html(this.$el);
   },
 
   render: function () {
-    var form_html = $('#film_form').html();
-    this.$el.html(form_html);
+    this.$el.html($('#filmForm').html());
   },
 
   addMovie: function(e) {
@@ -24,19 +24,19 @@ App.Views.MovieAdd = Backbone.View.extend ({
     var movie_dir = $('#director').val();
     var movie_trailer = $('#trailer').val();
 
-    var movie = new App.Models.Movie ({
-      title: movie_title,
-      director: movie_dir,
-      trailer: movie_trailer,
-    });
+    // var movie = new App.Models.Movie ({
+    //   title: movie_title,
+    //   director: movie_dir,
+    //   trailer: movie_trailer,
+    // });
 
     App.fav_movie.add(movie).save();
 
-    $('#movie-click')[0].reset();
+    // $('#movie-click')[0].reset();
 
   }
 
 
 });
 
-})();
+}());
