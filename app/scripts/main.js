@@ -1,21 +1,18 @@
-var fav_movie = new Movies();
+(function () {
 
-$('#movie-click').on('submit', function (event) {
-  event.preventDefault();
-  var film = new Movie({
-    title: $('#title').val(),
-    director: $('#director').val(),
-    good: $('#good').val(),
-    bad: $('#bad').val()
-  });
-  console.log(film);
-  fav_movie.add(film);
-  film.save();
-  $(this)[0].reset();
-});
+App.fav_movie = new App.Collections.Movies();
 
-fav_movie.fetch().done(function () {
-  var movieview = new MovieView({
-    collection: fav_movie
+App.fav_movie.fetch().done(function () {
+  App.movieview = new App.Views.MovieView({
+    collection: App.fav_movie
   });
 });
+
+new App.Views.MovieAdd();
+
+// $('#good').on('click', function (){
+//   $('#moviecntr').html($('#good:checked')).val();
+//
+// });
+
+})();

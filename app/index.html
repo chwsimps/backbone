@@ -25,21 +25,23 @@
 
     <div class="hero-unit">
       <h1>Movie List</h1>
-      <form id="movie-click">
-        <input type="text" id="title" placeholder="Movie">
-        <input type="text" id="director" placeholder="Director">
-        <!-- <div id="recommend">
-          <p>Recommend</p> -->
-          <input type="checkbox" id="good" value="Yes">Yes
-          <input type="checkbox" id="bad" value="No">No
-        <!-- </div> -->
-        <button id="moviebtn">Add</button>
-      </form>
+      <div id="movieform"></div>
       <div id="moviecntr"></div>
     </div>
 
     <script type="text/template" id="film">
-      <li><%= title %> directed by <%= director %> Recommend <%= good %><%= bad %></li>
+      <li><a href="<%= trailer %>"><%= title %></a> directed by <%= director %><div class="rating"><%= good %></div><button id="<%= _id %>">x</button></li>
+    </script>
+
+    <script type="text/template" id="film_form">
+      <form id="movie-click">
+        <input type="text" id="title" placeholder="Movie">
+        <input type="text" id="director" placeholder="Director">
+        <input type="text" id="trailer" placeholder="Movie/Trailer Link">
+        <input type="radio" name="good" id="good" value="Yes"> Yes
+        <input type="radio" name="good" id="good" value="No"> No
+        <button id="moviebtn">Add</button>
+      </form>
     </script>
 
     <!-- build:js scripts/vendor.js -->
@@ -50,10 +52,18 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+    <script type="text/javascript">
+      window.App = {};
+      App.Models = {};
+      App.Collections = {};
+      App.Views = {};
+    </script>
+
     <!-- build:js scripts/main.js -->
     <script src="scripts/models/model.js"></script>
     <script src="scripts/collections/collection.js"></script>
     <script src="scripts/views/view.js"></script>
+    <script src="scripts/views/add_view.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 </body>

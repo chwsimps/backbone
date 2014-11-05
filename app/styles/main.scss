@@ -19,17 +19,43 @@ body {
   border-radius: 6px;
   padding: 60px;
   h1 {
+    margin-top: 5px;
     font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
     text-align: center;
   }
   form {
     text-align: center;
   }
+  ul {
+    padding: 0;
+    li {
+      list-style: none;
+      background-color: HSLA(207, 22%, 72%, 1);
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      button {
+        position: relative;
+        float: right;
+        // display: none;
+        border-radius: 5px;
+        background-color: lightgray;
+        border: 1px solid gray;
+        margin-top: -34px;
+        margin-right: -3px;
+        z-index: 1;
+        clear: both;
+        &:hover {
+          background-color: gray;
+        }
+      }
+    }
+  }
 }
 
-.film {
-  list-style: none;
-  padding: 0;
+.rating {
+  position: relative;
+  display: inline-block;
+  float: right;
+  padding-right: 25px;
 }
