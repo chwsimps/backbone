@@ -10,9 +10,5 @@ App.fav_movie.fetch().done(function () {
 
 new App.Views.MovieAdd();
 
-// $('#good').on('click', function (){
-//   $('#moviecntr').html($('#good:checked')).val();
-//
-// });
 
 })();

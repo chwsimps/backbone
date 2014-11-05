@@ -24,7 +24,24 @@ body {
     text-align: center;
   }
   form {
-    text-align: center;
+    input {
+      width: 88.4%;
+      outline: none;
+    }
+    input[type=text]:focus, textarea:focus {
+        box-shadow: 0 0 5px HSLA(207, 22%, 72%, 1);
+        border: 2px solid HSLA(207, 22%, 72%, 1);
+    }
+    button {
+      position: absolute;
+      margin: -33px 0px 0px 10px;
+      background-color: lightgray;
+      border: 1px solid gray;
+      border-radius: 5px;
+      &:hover {
+        background-color: HSLA(349, 100%, 43%, .8);
+      }
+    }
   }
   ul {
     padding: 0;
@@ -34,19 +51,22 @@ body {
       padding: 10px;
       margin-bottom: 10px;
       border-radius: 10px;
+      cursor: pointer;
+      &:hover {
+        background-color: HSLA(207, 30%, 80%, 1);
+      }
       button {
         position: relative;
         float: right;
-        // display: none;
         border-radius: 5px;
         background-color: lightgray;
         border: 1px solid gray;
-        margin-top: -34px;
+        margin-top: -4px;
         margin-right: -3px;
         z-index: 1;
         clear: both;
         &:hover {
-          background-color: gray;
+          background-color: HSLA(349, 100%, 43%, .8);
         }
       }
     }

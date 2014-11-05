@@ -23,13 +23,11 @@ App.Views.MovieAdd = Backbone.View.extend ({
     var movie_title = $('#title').val();
     var movie_dir = $('#director').val();
     var movie_trailer = $('#trailer').val();
-    var movie_good = $('#good').val();
 
     var movie = new App.Models.Movie ({
       title: movie_title,
       director: movie_dir,
       trailer: movie_trailer,
-      good: movie_good
     });
 
     App.fav_movie.add(movie).save();

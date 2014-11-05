@@ -5,8 +5,7 @@ App.Models.Movie = Backbone.Model.extend({
   defaults: {
     title: '',
     director: '',
-    trailer: '',
-    good: ''
+    trailer: ''
   },
 
   idAttribute: '_id',
