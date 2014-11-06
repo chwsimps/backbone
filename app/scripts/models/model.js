@@ -1,18 +1,19 @@
 (function () {
 
-App.Models.Movie = Backbone.Model.extend({
+  App.Models.Movie = Backbone.Model.extend({
 
-  defaults: {
-    title: '',
-    director: '',
-    trailer: ''
-  },
+    idAttribute: '_id',
 
-  idAttribute: '_id',
+    defaults: {
+      title: '',
+      director: '',
+      trailer: '',
+      comments: '',
+      rating: ''
+    },
 
-  initialize: function () {}
+    initialize: function () {}
 
-});
-
+  });
 
 }());

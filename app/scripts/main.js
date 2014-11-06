@@ -1,14 +1,15 @@
 (function () {
 
-App.fav_movie = new App.Collections.Movies();
+  // Create instance of Collection
+  App.movies = new App.Collections.Movies();
 
-App.fav_movie.fetch().done(function () {
-  App.movieview = new App.Views.MovieView({
-    collection: App.fav_movie
+  // Fetch server-side movies
+  App.movies.fetch().done( function () {
+
+    App.router = new App.Routers.AppRouter();
+
+
   });
-});
-
-new App.Views.MovieAdd();
 
 
 }());

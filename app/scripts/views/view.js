@@ -1,50 +1,35 @@
 (function () {
 
-App.Views.MovieView = Backbone.View.extend({
-  tagName: 'ul',
-  className: 'film',
+  App.Views.AddMovie = Backbone.View.extend({
 
-  events: {
-    'click li button' : 'deleteMovie'
-  },
+    events: {
+      'submit #addMovie' : 'addMovie'
+    },
 
-initialize: function () {
-  this.render();
+    initialize: function () {
+      this.render();
+      $('#movieForm').html(this.$el);
+    },
 
-  App.fav_movie.on('sync', this.render, this);
-  App.fav_movie.on('destroy', this.render, this);
+    render: function () {
+      this.$el.html($('#film_form').html());
+    },
 
-  $('#moviecntr').html(this.el);
+    addMovie: function (e) {
+      e.preventDefault();
 
-  },
+      var m = new App.Models.Movie({
+        title: $('#movie_title').val(),
+        director: $('#movie_director').val(),
+        trailer: $('#movie_trailer').val()
+      });
 
-render: function (){
-  var self = this;
+      App.movies.add(m).save();
 
-  var template = $('#film').html();
-  var rendered = _.template(template);
+      $('#addMovie')[0].reset();
 
-  this.$el.empty();
+    }
 
-  _.each(App.fav_movie.models, function (m) {
-    self.$el.append(rendered(m.attributes));
   });
-
-  return this;
-
-  },
-
-  deleteMovie: function (e) {
-    e.preventDefault();
-
-    var id = $(e.target).attr('id');
-
-    var gone = App.fav_movie.get(id);
-
-    gone.destroy();
-
-  }
-
-});
 
 }());

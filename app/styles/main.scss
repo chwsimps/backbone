@@ -20,65 +20,23 @@ body {
   border-radius: 6px;
   padding: 60px;
   h1 {
-    margin-top: 5px;
     font-size: 60px;
-    text-align: center;
+    line-height: 1;
+    letter-spacing: -1px;
   }
   form {
-    input {
-      width: 82%;
-      outline: none;
-    }
-    input[type=text]:focus, textarea:focus {
-        box-shadow: 0 0 5px HSLA(207, 22%, 72%, 1);
-        border: 2px solid HSLA(207, 22%, 72%, 1);
-    }
-    button {
-      position: absolute;
-      margin: -113px 0px 0px 408px;
-      background-color: lightgray;
-      border: 1px solid gray;
-      border-radius: 5px;
-      &:hover {
-        background-color: HSLA(349, 100%, 43%, .8);
-      }
-    }
-  }
-  ul {
-    padding: 0;
-    li {
-      list-style: none;
-      background-color: HSLA(207, 22%, 72%, 1);
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 10px;
-      cursor: pointer;
-      &:hover {
-        background-color: HSLA(207, 30%, 80%, 1);
-      }
-      button {
-        float: right;
-        border-radius: 5px;
-        background-color: lightgray;
-        border: 1px solid gray;
-        padding: 0px 10px 5px 10px;
-        margin: 2.5px -3px 0px 0px;
-        &:hover {
-          background-color: HSLA(349, 100%, 43%, .8);
-        }
-      }
-    }
+    margin: 15px 0;
   }
 }
 
-.rating {
-  position: relative;
-  display: inline-block;
-  float: right;
-  padding-right: 25px;
+#delete {
+  background-color: hsla(349,100%,43%,1);
 }
 
-// Bitters
+.coffeeList {
+  @include clearfix;
+
+}
 
 .card {
   $card-border-color: $base-border-color;
