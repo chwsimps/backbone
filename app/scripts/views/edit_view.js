@@ -6,7 +6,8 @@
     className: 'movieEdit',
 
     events: {
-      'submit #editMovie' : 'editMovie',
+      'click #save' : 'editMovie',
+      'click #view_trailer' : 'viewTrailer',
       'click #delete' : 'deleteFilm'
     },
 
@@ -36,7 +37,7 @@
       // Updates Model Instance
       this.options.movie.set({
         title: $('#update_title').val(),
-        director: $('#update_director').val(),
+        genre: $('#update_genre').val(),
         trailer: $('#update_trailer').val(),
         comments: $('#update_comments').val()
       });
@@ -46,6 +47,12 @@
       // Go back to home page
       App.router.navigate('', {trigger: true});
 
+    },
+
+    viewTrailer: function (e) {
+      e.preventDefault();
+
+      App.router.navigate(trailer);
     },
 
     deleteFilm: function (e) {

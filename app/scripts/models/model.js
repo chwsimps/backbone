@@ -6,7 +6,7 @@
 
     defaults: {
       title: '',
-      director: '',
+      genre: '',
       trailer: '',
       comments: '',
       rating: ''

@@ -20,8 +20,9 @@
 
       var m = new App.Models.Movie({
         title: $('#movie_title').val(),
-        director: $('#movie_director').val(),
-        trailer: $('#movie_trailer').val()
+        genre: $('#movie_genre').val(),
+        trailer: $('#movie_trailer').val(),
+        comments: $('#movie_comments').val()
       });
 
       App.movies.add(m).save();
