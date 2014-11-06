@@ -37,6 +37,7 @@
       this.options.movie.set({
         title: $('#update_title').val(),
         director: $('#update_director').val(),
+        trailer: $('#update_trailer').val(),
         comments: $('#update_comments').val()
       });
 

@@ -36,13 +36,12 @@
         <input type="text" id="movie_trailer" placeholder="Movie/Trailer Link" />
         <button>Add Movie</button>
         </form>
-        <hr />
     </script>
 
     <script type="text/template" id="film_list">
       <li class="card" id="<%= _id %>">
         <a href="#/edit/<%= _id %>">
-          <div class="card-header"><%= title %> by <%= director %></div>
+          <div class="card-header"><%= title %> directed by <%= director %></div>
           <% if(comments !== '') { %>
               <div class="card-copy"><p><%= comments %></p></div>
           <% } %>
@@ -56,14 +55,15 @@
     <script type="text/template" id="edit_film">
       <li class="card" id="<%= _id %>">
         <form id="editMovie">
-            <div class="card-header">
-              <input type="text" value="<%= title %>" id="update_title" />
-              <input type="text" value="<%= director %>" id="update_director" />
-            <div class="card-copy">
-                <textarea id="update_comments"><%= comments %></textarea>
-            </div>
-            <button>Save</button>
-            <button id="delete">Delete</button>
+          <a href="<%= trailer %>"><%= title %></a>
+          <div class="card-header">
+            <input type="text" value="<%= title %>" id="update_title" />
+            <input type="text" value="<%= director %>" id="update_director" />
+          <div class="card-copy">
+              <textarea id="update_comments"><%= comments %></textarea>
+          </div>
+          <button>Save</button>
+          <button id="delete">Delete</button>
         </form>
       </li>
     </script>
