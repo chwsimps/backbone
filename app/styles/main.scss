@@ -30,13 +30,18 @@ body {
 }
 
 #delete {
-  background-color: hsla(349,100%,43%,1);
+  background-color: hsla(349,100%,43%,.7);
+  &:hover {
+    background-color: hsla(349,100%,43%,1);
+  }
 }
 
-.coffeeList {
-  @include clearfix;
+// #movieList {
+//   @include clearfix;
+//
+// }
 
-}
+// Bitters SASS for Form
 
 .card {
   $card-border-color: $base-border-color;
