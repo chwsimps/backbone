@@ -39,6 +39,7 @@
         title: $('#update_title').val(),
         genre: $('#update_genre').val(),
         trailer: $('#update_trailer').val(),
+        rating: $('input[name="rating"]:checked').val(),
         comments: $('#update_comments').val()
       });
 

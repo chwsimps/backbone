@@ -26,6 +26,7 @@
     <div class="full">
       <h1>Movie List</h1>
       <div id="movieForm"></div>
+      <div id="space"></div>
       <div id="movieList"></div>
     </div>
 
@@ -39,10 +40,10 @@
         <textarea id="movie_comments" value="<%= comments %>" placeholder="Notes"></textarea>
         <fieldset id="rating">
           <legend>Rate Movie:</legend>
-          <input type="radio" id="star4" name="rating" value="4" /><label for="star4">4 stars</label>
-          <input type="radio" id="star3" name="rating" value="3" /><label for="star3">3 stars</label>
-          <input type="radio" id="star2" name="rating" value="2" /><label for="star2">2 stars</label>
-          <input type="radio" id="star1" name="rating" value="1" /><label for="star1">1 star</label>
+          <input type="radio" id="star4" name="rating" value="&#9733;&#9733;&#9733;&#9733;" /><label for="star4"></label>
+          <input type="radio" id="star3" name="rating" value="&#9733;&#9733;&#9733;" /><label for="star3"></label>
+          <input type="radio" id="star2" name="rating" value="&#9733;&#9733;" /><label for="star2"></label>
+          <input type="radio" id="star1" name="rating" value="&#9733;" /><label for="star1"></label>
         </fieldset>
         <button id="addMovieBtn">Add Movie</button>
         </form>
@@ -51,12 +52,9 @@
     <script type="text/template" id="film_list">
       <li class="card" id="<%= _id %>">
         <a href="#/edit/<%= _id %>">
-          <div class="card-header"><%= title %><br /><%= genre %></div>
+          <div class="card-header"><%= title %><br /><%= genre %><br /><%= rating %></div>
           <% if(comments !== '') { %>
               <div class="card-copy"><p><%= comments %></p></div>
-          <% } %>
-          <% if(rating !== '') { %>
-              <div class="card-stats">Rating:</div>
           <% } %>
         </a>
       </li>
@@ -65,12 +63,20 @@
     <script type="text/template" id="edit_film">
       <li class="card" id="<%= _id %>">
         <form id="editMovie">
+          <div class="rating_view">
+            <fieldset id="rating">
+              <input type="radio" id="star4" name="rating" value="&#9733;&#9733;&#9733;&#9733;" /><label for="star4"></label>
+              <input type="radio" id="star3" name="rating" value="&#9733;&#9733;&#9733;" /><label for="star3"></label>
+              <input type="radio" id="star2" name="rating" value="&#9733;&#9733;" /><label for="star2"></label>
+              <input type="radio" id="star1" name="rating" value="&#9733;" /><label for="star1"></label>
+            </fieldset>
+          </div>
           <div class="card-header">
             <input type="text" value="<%= title %>" id="update_title" />
             <input type="text" value="<%= genre %>" id="update_genre" />
             <input type="text" value="<%= trailer %>" id="update_trailer" />
           <div class="card-copy">
-              <textarea id="update_comments" placeholder="Notes"><%= comments %></textarea>
+          <textarea id="update_comments" placeholder="Notes"><%= comments %></textarea>
           </div>
           <div class="edit_btns">
             <button id="trailerbtn"><a class="view_trailer" href="<%= trailer %>" target="_blank">Trailer</a></button>

@@ -44,6 +44,17 @@ body {
   }
 }
 
+#movieForm {
+  margin-bottom: 25px;
+}
+
+#space {
+  height: 20px;
+  width: 100%;
+  background-color: white;
+  margin: 10px 0 15px 0;
+}
+
 // Stars ===============================
 
 #rating {
@@ -118,6 +129,26 @@ body {
 #movie_comments {
   @include inputs;
   float: right;
+  &:hover {
+    border: 1px solid HSLA(0, 0%, 77%, 1);
+  }
+}
+
+#movie_trailer {
+  margin-bottom: 5px;
+}
+
+// Stars for Edit View ==================
+
+.rating_view {
+  display: inline-block;
+  height: 40px;
+  float: right;
+  margin: -10px 7px 5px 0;
+  fieldset {
+    border: none;
+    background-color: transparent;
+  }
 }
 
 //Buttons for Edit View =================
@@ -221,11 +252,6 @@ body {
     padding: $base-spacing/2 $gutter/2;
     font-size: .9em;
     line-height: 1.5em;
-  }
-
-  .card-stats {
-    padding: $base-spacing/2 $gutter/2;
-    overflow: auto;
   }
 
   &:hover {

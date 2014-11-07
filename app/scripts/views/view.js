@@ -22,8 +22,11 @@
         title: $('#movie_title').val(),
         genre: $('#movie_genre').val(),
         trailer: $('#movie_trailer').val(),
+        rating: $('input[name="rating"]:checked').val(),
         comments: $('#movie_comments').val()
       });
+
+      console.log(m.title);
 
       App.movies.add(m).save();
 
