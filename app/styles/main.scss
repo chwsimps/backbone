@@ -19,6 +19,8 @@
   outline: none;
 }
 
+// Page ===============================
+
 * {
   button {
     outline: none;
@@ -42,6 +44,65 @@ body {
   }
 }
 
+// Stars ===============================
+
+#rating {
+    float:left;
+    padding: 0 0 0 5px;
+}
+
+#rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+#rating:not(:checked) > label {
+    float:right;
+    width:1.2em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:HSLA(0, 0%, 90%, 1);
+}
+
+#rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+#rating > input:checked ~ label {
+    color: HSLA(51, 100%, 50%, .5);
+}
+
+#rating:not(:checked) > label:hover,
+#rating:not(:checked) > label:hover ~ label {
+    color: HSLA(51, 100%, 50%, .5);
+}
+
+#rating > input:checked + label:hover,
+#rating > input:checked + label:hover ~ label,
+#rating > input:checked ~ label:hover,
+#rating > input:checked ~ label:hover ~ label,
+#rating > label:hover ~ input:checked ~ label {
+    color: HSLA(51, 100%, 50%, 1);
+}
+
+#rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+// Add Movie button ====================
+
+#addMovieBtn {
+  margin: 24px 0 0 20px;
+}
+
+// Form setup ==========================
+
 #addMovie {
   input {
     width: 49.5%;
@@ -58,6 +119,8 @@ body {
   @include inputs;
   float: right;
 }
+
+//Buttons for Edit View =================
 
 .edit_btns {
   text-align: center;
@@ -94,7 +157,7 @@ body {
   display: none;
 }
 
-// Bitters SASS for Form ===================================
+// Bitters SASS for Form =================
 
 .card {
   $card-border-color: $base-border-color;
