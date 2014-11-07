@@ -26,7 +26,11 @@
         comments: $('#movie_comments').val()
       });
 
-      console.log(m.title);
+      // App.movies.add(m).save(null {
+      //   success: function () {
+      //     App.router.navigate('', { trigger: true });
+      //   }
+      // });
 
       App.movies.add(m).save();
 

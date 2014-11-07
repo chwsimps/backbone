@@ -9,7 +9,9 @@
 
     template: _.template($('#film_list').html()),
 
-    initialize: function () {
+    initialize: function (opt) {
+      this.opt = opt;
+      
       this.render();
 
       this.collection.off();
