@@ -34,36 +34,39 @@ body {
 
 .full {
   margin: 0px 10%;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-    display: inline-block;
-  }
   form {
     margin: 15px 0;
   }
 }
 
-#movieForm {
-  margin-bottom: 25px;
+.logo-name {
+  display: inline-block;
+  margin: 15px 10px 0 0;
+  h1 {
+    font-size: 60px;
+  }
 }
 
-.addForm {
+.addFormBtn {
   display: inline-block;
+  margin: 0 3%;
+  button {
+    margin-top: -30px;
+  }
 }
 
 #sort {
   float: right;
-  margin-top: -63px;
-  margin-left: 50%;
   font-size: 25px;
+  margin-top: -62px;
   a{
-    padding: 10px 12px 10px 5px;
+    padding: 10px;
+    float: right;
   }
   img {
-    width: 5%;
-    margin-bottom: -3px;
+    float: right;
+    width: 2.5%;
+    margin-top: 20px;
   }
 }
 
@@ -71,7 +74,7 @@ body {
   height: 20px;
   width: 100%;
   background-color: HSLA(0, 0%, 97%, 1);
-  margin: 10px 0 15px 0;
+  margin: 25px 0 15px 0;
 }
 
 // Stars ===============================

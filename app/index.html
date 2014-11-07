@@ -24,14 +24,16 @@
   <body>
 
     <div class="full">
-      <h1><a href="/">Movie List</a></h1>
-      <a href="/#add" class="addForm"><button class="addBtn">Add</button></a>
-      <div id="movieForm"></div>
+      <div class="logo-name"><h1><a href="/">Movie List</a></h1></div>
+      <div class="addFormBtn">
+        <a href="/#add" class="addForm"><button class="addBtn">Add Movie</button></a>
+      </div>
       <div id="sort">
         <a href="/#sort/title">Title</a><img src="../images/film.png" alt="" />
         <a href="#sort/genre">Genre</a><img src="../images/film.png" alt="" />
         <a href="/#">Rating</a>
       </div>
+      <div id="movieForm"></div>
       <div id="space"></div>
       <div id="movieList"></div>
     </div>
@@ -51,7 +53,7 @@
           <input type="radio" id="star2" name="rating" value="★★" /><label for="star2"></label>
           <input type="radio" id="star1" name="rating" value="★" /><label for="star1"></label>
         </fieldset>
-        <button id="addMovieBtn">Add Movie</button>
+        <button id="addMovieBtn">Add</button>
         </form>
     </script>
 
