@@ -50,22 +50,22 @@ body {
 
 #sort_items {
   float: right;
-  margin-top: -62px;
+  margin-top: -63px;
   margin-left: 50%;
   font-size: 25px;
   a{
-    padding: 10px 10px 10px 5px;
+    padding: 10px 12px 10px 5px;
   }
   img {
     width: 5%;
-    margin-bottom: -2px;
+    margin-bottom: -3px;
   }
 }
 
 #space {
   height: 20px;
   width: 100%;
-  background-color: white;
+  background-color: HSLA(0, 0%, 97%, 1);
   margin: 10px 0 15px 0;
 }
 
@@ -203,6 +203,9 @@ body {
 }
 
 // Bitters SASS for Form =================
+.card:hover .card-copy{
+    display: block;
+}
 
 .card {
   $card-border-color: $base-border-color;
@@ -213,6 +216,7 @@ body {
   $card-image-background: #DBD199;
   $card-image-hover-background: lighten($card-image-background, 5);
   $card-stats-color: lighten($base-accent-color, 10);
+
 
   @include transition (all 0.2s ease-in-out);
   background-color: $card-background;
@@ -266,6 +270,7 @@ body {
     padding: $base-spacing/2 $gutter/2;
     font-size: .9em;
     line-height: 1.5em;
+    display: none;
   }
 
   &:hover {
