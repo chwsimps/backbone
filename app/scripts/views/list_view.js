@@ -9,9 +9,9 @@
 
     template: _.template($('#film_list').html()),
 
-    initialize: function (opt) {
-      this.opt = opt;
-      
+    initialize: function (options) {
+      this.options = options;
+
       this.render();
 
       this.collection.off();
@@ -27,9 +27,23 @@
 
       this.$el.empty();
 
-      this.collection.each(function (m) {
+      if(this.options.sort != undefined) {
+        var local_collection = this.collection.sortBy( function (model) {
+          return model.get(self.options.sort);
+        })
+      _.each(local_collection, function (m) {
         self.$el.append(self.template(m.toJSON()));
-      });
+        });
+      } else {
+        this.collection.sort();
+        this.collection.each( function (m) {
+          self.$el.append(self.template(m.toJSON()));
+        });
+      }
+
+      // this.collection.each(function (m) {
+      //   self.$el.append(self.template(m.toJSON()));
+      // });
 
       return this;
     }

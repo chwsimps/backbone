@@ -26,15 +26,15 @@
         comments: $('#movie_comments').val()
       });
 
-      // App.movies.add(m).save(null {
-      //   success: function () {
-      //     App.router.navigate('', { trigger: true });
-      //   }
-      // });
+      App.movies.add(m).save(null, {
+        success: function () {
+          App.router.navigate('', { trigger: true });
+        }
+      });
 
-      App.movies.add(m).save();
-
-      $('#addMovie')[0].reset();
+      // App.movies.add(m).save();
+      //
+      // $('#addMovie')[0].reset();
 
     }
 

@@ -38,6 +38,7 @@ body {
     font-size: 60px;
     line-height: 1;
     letter-spacing: -1px;
+    display: inline-block;
   }
   form {
     margin: 15px 0;
@@ -48,7 +49,11 @@ body {
   margin-bottom: 25px;
 }
 
-#sort_items {
+.addForm {
+  display: inline-block;
+}
+
+#sort {
   float: right;
   margin-top: -63px;
   margin-left: 50%;
