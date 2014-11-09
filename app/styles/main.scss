@@ -44,6 +44,11 @@ body {
   margin: 15px 10px 0 0;
   h1 {
     font-size: 60px;
+    width: 360px;
+  }
+  img {
+    width: 14.25%;
+    margin: 0 10px -3px 0;
   }
 }
 
@@ -67,6 +72,9 @@ body {
     float: right;
     width: 2.5%;
     margin-top: 20px;
+  }
+  .rating-sort {
+    padding-right: 0;
   }
 }
 
