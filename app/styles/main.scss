@@ -19,7 +19,7 @@
   outline: none;
 }
 
-// Page ===============================
+// Main Page ===============================
 
 * {
   button {
@@ -34,6 +34,7 @@ body {
 
 .full {
   margin: 0px 10%;
+  background-color: darkgray;
   form {
     margin: 15px 0;
   }
@@ -209,13 +210,22 @@ body {
   }
 }
 
-// #movieList {
-//   @include clearfix;
-//
-// }
+#movieList {
+  // @include clearfix;
+}
 
 #update_trailer {
   display: none;
+}
+
+#update_genre {
+  background-color: white;
+  border: 1px solid #DDD;
+  font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+  margin-bottom: 0.75em;
+  padding: 0.5em 0.5em;
+  width: 100%;
+  outline: none;
 }
 
 // Bitters SASS for Form =================
