@@ -34,7 +34,7 @@
 
       // App.movies.add(m).save();
       //
-      // $('#addMovie')[0].reset();
+      $('#addMovie')[0].reset();
 
     }
 

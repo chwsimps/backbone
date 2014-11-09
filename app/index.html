@@ -44,7 +44,7 @@
         <select id="movie_genre">
           <option value="Action">Action</option><option value="Adult">Adult</option><option value="Adventure">Adventure</option><option value="Comedy">Comedy</option><option value="Crime">Crime</option><option value="Drama">Drama</option><option value="Fantasy">Fantasy</option><option value="Horror">Horror</option><option value="Mystery">Mystery</option><option value="Romantic">Romantic</option><option value="Sci-fi">Sci-Fi</option><option value="Thriller">Thriller</option><option value="Other">Other</option>
         </select>
-        <input type="text" id="movie_trailer" placeholder="Movie/Trailer Link" />
+        <input type="text" id="movie_trailer" placeholder="Embeded Link" />
         <textarea id="movie_comments" value="<%= comments %>" placeholder="Notes"></textarea>
         <fieldset id="rating">
           <legend>Rate Movie:</legend>
@@ -97,7 +97,7 @@
               <div class="modal-window">
                 <div class="modal-inner">
                   <label class="modal-close" for="modal-1"></label>
-                  <iframe width="560" height="315" src="<%= trailer %>" frameborder="0" allowfullscreen></iframe>
+                  <iframe width="65%" height="360" src="<%= trailer %>" frameborder="0" allowfullscreen></iframe>
                 </div>
               </div>
             </div> <!--Modal button for Trailer -->
@@ -107,8 +107,6 @@
         </form> <!--editMovie form-->
       </li>
     </script> <!--script for edit_film-->
-
-
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->

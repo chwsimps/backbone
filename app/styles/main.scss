@@ -34,6 +34,8 @@ body {
 
 .full {
   margin: 0px 10%;
+  background-image: url(../images/pineapplecut.png);
+  height: 125px;
   form {
     margin: 15px 0;
   }
@@ -48,7 +50,7 @@ body {
   }
   img {
     width: 14.25%;
-    margin: 0 10px -3px 0;
+    margin: 0 3px -3px 10px;
   }
 }
 
@@ -64,6 +66,7 @@ body {
   float: right;
   font-size: 25px;
   margin-top: -62px;
+  margin-right: 3%;
   a{
     padding: 10px;
     float: right;
@@ -237,18 +240,6 @@ body {
   $modal-image-width: $modal-image-height;
   display: inline-block;
 
-  label {
-    cursor: pointer;
-    margin-bottom: 0;
-  }
-
-  label img {
-    $img-width: 300px;
-    border-radius: $img-width/2;
-    display: block;
-    max-width: $img-width;
-  }
-
   input[type="checkbox"] {
     display: none;
   }
@@ -261,10 +252,6 @@ body {
     }
   }
 
-  .modal-open {
-    overflow: hidden;
-  }
-
   .modal-window { // overlay
     @include transition(opacity .25s ease);
     @include position(fixed, 0px 0px 0px 0px);
@@ -274,10 +261,6 @@ body {
     visibility: hidden;
     z-index: 99999999999;
 
-    .modal-bg {
-      @include position(absolute, 0px 0px 0px 0px);
-      cursor: pointer;
-    }
   }
 
   .modal-close {
@@ -285,6 +268,10 @@ body {
     @include size(1.5em);
     cursor: pointer;
     background: $modal-background;
+    border-radius: 5px;
+    &:hover {
+      background-color: HSLA(349, 75%, 60%, 1);
+    }
 
     &:after,
     &:before {
@@ -299,7 +286,7 @@ body {
 
     &:hover:after,
     &:hover:before {
-      background: darken($modal-close-color, 10);
+      background: red;
     }
 
     &:before {
@@ -308,27 +295,9 @@ body {
   }
 
   .modal-inner {
-    @include transition(opacity .25s ease);
-    border-radius: $base-border-radius;
-    background: $modal-background;
-    margin: auto;
-    max-height: 95%;
-    position: relative;
-    overflow: auto;
-    width: 95%;
-    padding: $modal-padding /2;
-    margin-top: .6em;
 
-    @include media($medium-screen) {
-      padding: $modal-padding;
-      width: 60%;
-      max-height: 60%;
-      margin-top: 10em;
-    }
-
-    @include media($large-screen) {
-      width: 51.3%;
-      margin-top: 10em;
+    iframe {
+      margin: 11.75% 17%;
     }
   }
 
@@ -341,9 +310,6 @@ body {
     top: 0;
   }
 }
-
-// Based on code by Kasper Mikiewicz
-
 
 // Bitters SASS for Form =================
 
