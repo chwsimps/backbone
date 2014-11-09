@@ -27,16 +27,16 @@
       <div class="logo-name"><h1><a href="/"><img class="logo-title" src="../images/film.png" alt="" />Movie List</a></h1></div>
       <div class="addFormBtn">
         <a href="/#add" class="addForm"><button class="addBtn">Add Movie</button></a>
-      </div>
+      </div> <!--addFormBtn-->
       <div id="sort">
         <a href="/#sort/rating" class="rating-sort">Rating</a><img src="../images/film.png" alt="" />
         <a href="#sort/genre">Genre</a><img src="../images/film.png" alt="" />
         <a href="/#sort/title">Title</a>
-      </div>
+      </div> <!--sort-->
       <div id="movieForm"></div>
       <div id="space"></div>
       <div id="movieList"></div>
-    </div>
+    </div> <!--full-->
 
     <script type="text/template" id="film_form">
         <form id="addMovie">
@@ -55,7 +55,7 @@
         </fieldset>
         <button id="addMovieBtn">Add</button>
         </form>
-    </script>
+    </script> <!--script for film_form; adding items to list-->
 
     <script type="text/template" id="film_list">
       <li class="card" id="<%= _id %>">
@@ -64,12 +64,9 @@
           <% if(comments !== '') { %>
               <div class="card-copy"><p><%= comments %></p></div>
           <% } %>
-          <!--<% if(rating !== '') { %>
-              <div class="card-stats"><p><%= rating %></p></div>
-          <% } %>-->
         </a>
       </li>
-    </script>
+    </script> <!--script for film_list-->
 
     <script type="text/template" id="edit_film">
       <li class="card2" id="<%= _id %>">
@@ -81,7 +78,7 @@
             <input type="radio" id="star2" name="rating" value="★★" <% if (rating == "★★") { %>checked<% } %>><label for="star2"></label>
             <input type="radio" id="star1" name="rating" value="★" <% if (rating == "★") { %>checked<% } %>><label for="star1"></label>
           </fieldset>
-        </div>
+        </div> <!--rating_view-->
           <div class="card-header">
             <input type="text" value="<%= title %>" id="update_title" />
             <select id="update_genre">
@@ -90,15 +87,26 @@
             <input type="text" value="<%= trailer %>" id="update_trailer" />
           <div class="card-copy2">
           <textarea id="update_comments" placeholder="Notes"><%= comments %></textarea>
-          </div>
+          </div> <!--card-header-->
           <div class="edit_btns">
-            <button id="trailerbtn"><a class="view_trailer" href="<%= trailer %>" target="_blank">Trailer</a></button>
+            <div class="modal">
+              <label for="modal-1">
+                <div class="btn js-btn">Trailer</div>
+              </label>
+              <input class="modal-state" id="modal-1" type="checkbox" />
+              <div class="modal-window">
+                <div class="modal-inner">
+                  <label class="modal-close" for="modal-1"></label>
+                  <iframe width="560" height="315" src="<%= trailer %>" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div> <!--Modal button for Trailer -->
             <button id="save">Save</button>
             <button id="delete">Delete</button>
-          </div>
-        </form>
+          </div> <!-- edit_btns-->
+        </form> <!--editMovie form-->
       </li>
-    </script>
+    </script> <!--script for edit_film-->
 
 
 
