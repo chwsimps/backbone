@@ -29,9 +29,9 @@
         <a href="/#add" class="addForm"><button class="addBtn">Add Movie</button></a>
       </div> <!--addFormBtn-->
       <div id="sort">
-        <a href="/#sort/rating" class="rating-sort">Rating</a><img src="../images/film.png" alt="" />
-        <a href="#sort/genre">Genre</a><img src="../images/film.png" alt="" />
-        <a href="/#sort/title">Title</a>
+        <a href="/#sort/rating" id="rating-sort">Rating</a><img src="../images/film.png" alt="" />
+        <a href="#sort/genre" id="genre-sort">Genre</a><img src="../images/film.png" alt="" />
+        <a href="/#sort/title" id="title-sort">Title</a>
       </div> <!--sort-->
       <div id="movieForm"></div>
       <div id="space"></div>
@@ -60,9 +60,13 @@
     <script type="text/template" id="film_list">
       <li class="card" id="<%= _id %>">
         <a href="#/edit/<%= _id %>">
-          <div class="card-header"><%= title %><br /><%= genre %><br /><%= rating %></div>
+          <div class="card-header">
+            <p><%= title %></p>
+            <p><%= genre %></p>
+            <p class="par_star"><%= rating %></p>
+          </div>
           <% if(comments !== '') { %>
-              <div class="card-copy"><p><%= comments %></p></div>
+          <div class="card-copy"><p><%= comments %></p></div>
           <% } %>
         </a>
       </li>
