@@ -3,7 +3,7 @@
   App.Routers.AppRouter = Parse.Router.extend({
 
     initialize: function () {
-      // Light the Fire
+
       Parse.history.start();
     },
 
