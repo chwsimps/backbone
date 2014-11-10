@@ -1,6 +1,6 @@
 (function () {
 
-  App.Views.AddMovie = Backbone.View.extend({
+  App.Views.AddMovie = Parse.View.extend({
 
     events: {
       'submit #addMovie' : 'addMovie'
@@ -26,14 +26,14 @@
         comments: $('#movie_comments').val()
       });
 
-      App.movies.add(m).save(null, {
+      m.save(null, {
         success: function () {
+          App.movies.add(m);
           App.router.navigate('', { trigger: true });
         }
       });
 
-      // App.movies.add(m).save();
-      //
+
       $('#addMovie')[0].reset();
 
     }

@@ -1,6 +1,6 @@
 (function () {
 
-  App.Views.EditMovie = Backbone.View.extend({
+  App.Views.EditMovie = Parse.View.extend({
 
     tagName: 'ul',
     className: 'movieEdit',

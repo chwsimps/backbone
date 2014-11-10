@@ -1,8 +1,10 @@
 (function () {
 
-  App.Models.Movie = Backbone.Model.extend({
+  App.Models.Movie = Parse.Object.extend({
 
-    idAttribute: '_id',
+    className: 'Movie',
+
+    idAttribute: 'objectId',
 
     defaults: {
       title: '',

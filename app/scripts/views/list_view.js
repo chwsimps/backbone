@@ -1,6 +1,6 @@
 (function () {
 
-  App.Views.ListMovie = Backbone.View.extend({
+  App.Views.ListMovie = Parse.View.extend({
 
     tagName: 'ul',
     className: 'filmList',

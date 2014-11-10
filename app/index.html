@@ -58,8 +58,8 @@
     </script> <!--script for film_form; adding items to list-->
 
     <script type="text/template" id="film_list">
-      <li class="card" id="<%= _id %>">
-        <a href="#/edit/<%= _id %>">
+      <li class="card" id="<%= objectId %>">
+        <a href="#/edit/<%= objectId %>">
           <div class="card-header">
             <p class="par_title"><%= title %></p>
             <p class="par_genre"><%= genre %></p>
@@ -73,7 +73,7 @@
     </script> <!--script for film_list-->
 
     <script type="text/template" id="edit_film">
-      <li class="card2" id="<%= _id %>">
+      <li class="card2" id="<%= objectId %>">
         <form id="editMovie">
         <div class="rating_view">
           <fieldset id="rating">
@@ -116,7 +116,7 @@
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
-    <script src="../bower_components/backbone/backbone.js"></script>
+    <script src="//www.parsecdn.com/js/parse-1.3.1.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
