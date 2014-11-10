@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>MovieList</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body>
+
+    <div class="full">
+      <div class="logo-name"><h1><a href="/"><img class="logo-title" src="../images/film.png" alt="" />Movie List</a></h1></div>
+      <div class="addFormBtn">
+        <a href="/#add" class="addForm"><button class="addBtn">Add Movie</button></a>
+      </div> <!--addFormBtn-->
+      <div id="sort">
+        <a href="/#sort/rating" id="rating-sort">Rating</a><img src="../images/film.png" alt="" />
+        <a href="#sort/genre" id="genre-sort">Genre</a><img src="../images/film.png" alt="" />
+        <a href="/#sort/title" id="title-sort">Title</a>
+      </div> <!--sort-->
+      <div id="movieForm"></div>
+      <div id="space"></div>
+      <div id="movieList"></div>
+    </div> <!--full-->
+
+    <script type="text/template" id="film_form">
+        <form id="addMovie">
+        <input type="text" id="movie_title" placeholder="Movie" />
+        <select id="movie_genre">
+          <option value="Action">Action</option><option value="Adult">Adult</option><option value="Adventure">Adventure</option><option value="Comedy">Comedy</option><option value="Crime">Crime</option><option value="Drama">Drama</option><option value="Fantasy">Fantasy</option><option value="Horror">Horror</option><option value="Mystery">Mystery</option><option value="Romantic">Romantic</option><option value="Sci-fi">Sci-Fi</option><option value="Thriller">Thriller</option><option value="Other">Other</option>
+        </select>
+        <input type="text" id="movie_trailer" placeholder="Embeded Link" />
+        <textarea id="movie_comments" value="<%= comments %>" placeholder="Notes"></textarea>
+        <fieldset id="rating">
+          <legend>Rate Movie:</legend>
+          <input type="radio" id="star4" name="rating" value="★★★★" /><label for="star4"></label>
+          <input type="radio" id="star3" name="rating" value="★★★" /><label for="star3"></label>
+          <input type="radio" id="star2" name="rating" value="★★" /><label for="star2"></label>
+          <input type="radio" id="star1" name="rating" value="★" /><label for="star1"></label>
+        </fieldset>
+        <button id="addMovieBtn">Add</button>
+        </form>
+    </script> <!--script for film_form; adding items to list-->
+
+    <script type="text/template" id="film_list">
+      <li class="card" id="<%= _id %>">
+        <a href="#/edit/<%= _id %>">
+          <div class="card-header">
+            <p class="par_title"><%= title %></p>
+            <p class="par_genre"><%= genre %></p>
+            <p class="par_star"><%= rating %></p>
+          </div>
+          <% if(comments !== '') { %>
+          <div class="card-copy"><p><%= comments %></p></div>
+          <% } %>
+        </a>
+      </li>
+    </script> <!--script for film_list-->
+
+    <script type="text/template" id="edit_film">
+      <li class="card2" id="<%= _id %>">
+        <form id="editMovie">
+        <div class="rating_view">
+          <fieldset id="rating">
+            <input type="radio" id="star4" name="rating" value="★★★★" <% if (rating == "★★★★") { %>checked<% } %>><label for="star4"></label>
+            <input type="radio" id="star3" name="rating" value="★★★" <% if (rating == "★★★") { %>checked<% } %>><label for="star3"></label>
+            <input type="radio" id="star2" name="rating" value="★★" <% if (rating == "★★") { %>checked<% } %>><label for="star2"></label>
+            <input type="radio" id="star1" name="rating" value="★" <% if (rating == "★") { %>checked<% } %>><label for="star1"></label>
+          </fieldset>
+        </div> <!--rating_view-->
+          <div class="card-header">
+            <input type="text" value="<%= title %>" id="update_title" />
+            <select id="update_genre">
+              <option value="Action">Action</option><option value="Adult">Adult</option><option value="Adventure">Adventure</option><option value="Comedy">Comedy</option><option value="Crime">Crime</option><option value="Drama">Drama</option><option value="Fantasy">Fantasy</option><option value="Horror">Horror</option><option value="Mystery">Mystery</option><option value="Romantic">Romantic</option><option value="Sci-fi">Sci-Fi</option><option value="Thriller">Thriller</option><option value="Other">Other</option>
+            </select>
+            <input type="text" value="<%= trailer %>" id="update_trailer" />
+          <div class="card-copy2">
+          <textarea id="update_comments" placeholder="Notes"><%= comments %></textarea>
+          </div> <!--card-header-->
+          <div class="edit_btns">
+            <div class="modal">
+              <label for="modal-1">
+                <div class="btn js-btn">Trailer</div>
+              </label>
+              <input class="modal-state" id="modal-1" type="checkbox" />
+              <div class="modal-window">
+                <div class="modal-inner">
+                  <label class="modal-close" for="modal-1"></label>
+                  <iframe width="65%" height="360" src="<%= trailer %>" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div> <!--Modal button for Trailer -->
+            <button id="save">Save</button>
+            <button id="delete">Delete</button>
+          </div> <!-- edit_btns-->
+        </form> <!--editMovie form-->
+      </li>
+    </script> <!--script for edit_film-->
+
+    <script src="scripts/vendor.js"></script>
+
+    <script type="text/javascript">
+        window.App = {};
+        App.Models = {};
+        App.Collections = {};
+        App.Views = {};
+        App.Routers = {};
+    </script>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
