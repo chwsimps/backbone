@@ -30,6 +30,7 @@
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: HSLA(0, 0%, 90%, 1);
+  font-size: 62.5%;
 }
 
 .full {
@@ -43,14 +44,23 @@ body {
 
 .logo-name {
   display: inline-block;
-  margin: 15px 10px 0 0;
+  margin: 15px 1.088% 0 0;
+  max-width: 100%;
   h1 {
-    font-size: 60px;
-    width: 360px;
+    font-size: 6em;
   }
   img {
-    width: 14.25%;
-    margin: 0 3px -3px 10px;
+    width: 9.25%;
+    margin: 0 0.5% -3px 2.75%;
+  }
+}
+
+@media (max-width: 465px) {
+  .logo-name h1 {
+    font-size: 5.15em;
+  }
+  .logo-name img {
+    width: 14%;
   }
 }
 
@@ -62,9 +72,15 @@ body {
   }
 }
 
+@media (max-width: 465px) {
+  .addFormBtn button {
+    margin-top: 10px;
+  }
+}
+
 #sort {
   float: right;
-  font-size: 25px;
+  font-size: 2.5em;
   margin-top: -62px;
   margin-right: 1.5%;
   font-weight: bold;
@@ -76,6 +92,13 @@ body {
     float: right;
     width: 2.5%;
     margin-top: 20px;
+  }
+}
+
+@media (max-width: 465px) {
+  #sort {
+    font-size: 2em;
+    margin-top: -37px;
   }
 }
 
